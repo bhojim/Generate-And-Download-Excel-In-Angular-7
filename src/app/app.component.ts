@@ -10,13 +10,14 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'excel-upload-download';
+  jsonURL = 'assets/sales.json';
   ngOnInit(){
 
   }
    excel=[];
     constructor(private excelService:ExcelServicesService,private http: HttpClient){
       this.getJSON().subscribe(data => {
-        data.forEach(row => {
+        data.forEach((row: any) => {
           this.excel.push(row);
         });
        });
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
        this.excelService.exportAsExcelFile(this.excel, 'sample');
     }
     public getJSON(): Observable<any> {
-      return this.http.get('https://api.myjson.com/bins/zg8of');
+      // return this.http.get('https://api.myjson.com/bins/zg8of');
+      return this.http.get(this.jsonURL);
     }
 }

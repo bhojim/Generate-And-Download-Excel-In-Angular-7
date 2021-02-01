@@ -1,0 +1,13 @@
+[{
+    "Name":"Peter",
+    "Month":"January 2020",
+    "Sales_Figure":212232,
+    "Perc":0.14
+},
+{
+    "Name":"John",
+    "Month":"March 2020",
+    "Sales_Figure":232.34,
+    "Perc":0.25
+}
+]
